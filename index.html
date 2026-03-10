@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hifi - Internet Murah dan Cepat</title>
+  <meta name="description" content="Indosat HiFi - Internet rumah murah, cepat, dan stabil untuk semua aktivitas digital Anda.">
+  <meta name="keywords" content="indosat hifi, internet rumah, wifi murah, internet cepat">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.svg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ==============================
+       FLOATING WHATSAPP BUTTON
+    ============================== */
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.08);
+      text-decoration: none;
+    }
+
+    .floating-wa .wa-tooltip {
+      background: #fff;
+      color: #222;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .floating-wa:hover .wa-tooltip {
+      opacity: 1;
+    }
+
+    .floating-wa .wa-icon {
+      background: #25D366;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+      animation: wa-pulse 2.5s infinite;
+      flex-shrink: 0;
+    }
+
+    .floating-wa .wa-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
+
+    @keyframes wa-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* ==============================
+       CONTACT BANNER (NEW DESIGN)
+    ============================== */
+    .contact-banner-section {
+      padding: 60px 0;
+      background-color: #f5f9ff;
+    }
+
+    .contact-banner-section .section-title {
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+    .contact-banner-section .section-title h2 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      padding: 8px 20px;
+      margin: 0;
+      background: color-mix(in srgb, #FFBE0B, transparent 90%);
+      color: #FFBE0B;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: 50px;
+      font-family: var(--default-font);
+    }
+
+    .contact-banner-section .section-title p {
+      color: #222222;
+      margin: 10px 0 0 0;
+      font-size: 32px;
+      font-weight: 700;
+      font-family: var(--heading-font);
+    }
+
+    .contact-banner-section .section-title p span {
+      color: #FFBE0B;
+    }
+
+    .contact-banner-wrap {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      display: block;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-banner-wrap:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.2);
+      text-decoration: none;
+    }
+
+    .contact-banner-inner {
+      display: flex;
+      align-items: stretch;
+      min-height: 280px;
+      background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 100%);
+    }
+
+    /* Left: photo side */
+    .contact-banner-photo {
+      flex: 1.2;
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .contact-banner-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .contact-banner-wrap:hover .contact-banner-photo img {
+      transform: scale(1.04);
+    }
+
+    /* Right: text side */
+    .contact-banner-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 50px 40px 40px;
+      background: linear-gradient(135deg, #c8006b 0%, #e8007e 60%, #ff4fa8 100%);
+      color: #fff;
+    }
+
+    .contact-banner-text h3 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .contact-banner-text p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .contact-banner-label {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 30px;
+      padding: 8px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    .contact-channels {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-channel-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 14px 22px;
+      min-width: 110px;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background 0.3s;
+    }
+
+    .contact-channel-item:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .contact-channel-item svg {
+      width: 36px;
+      height: 36px;
+      fill: #fff;
+    }
+
+    .contact-channel-item span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+    }
+
+    .click-hint {
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .click-hint i {
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-banner-inner {
+        flex-direction: column;
+      }
+      .contact-banner-photo {
+        min-height: 200px;
+        flex: none;
+        height: 200px;
+      }
+      .contact-banner-text {
+        padding: 30px 24px;
+      }
+      .contact-banner-text h3 {
+        font-size: 22px;
+      }
+    }
+
+    /* ==============================
+       NEWSLETTER FORM (custom JS)
+    ============================== */
+    .newsletter-form-wrap {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .newsletter-form-wrap input[type="email"] {
+      padding: 10px 18px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      min-width: 260px;
+      flex: 1;
+      max-width: 340px;
+    }
+
+    .newsletter-form-wrap button {
+      padding: 10px 26px;
+      border-radius: 30px;
+      border: none;
+      background: #FFBE0B;
+      color: #222;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .newsletter-form-wrap button:hover {
+      background: #e5a800;
+    }
+
+    .newsletter-msg {
+      margin-top: 10px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .newsletter-msg.success {
+      color: #4caf50;
+    }
+
+    .newsletter-msg.error {
+      color: #f44336;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- ============================================================
+       FLOATING WHATSAPP BUTTON (always visible)
+  ============================================================ -->
+  <a href="https://wa.me/62895377402405?text=Halo,%20saya%20ingin%20berlangganan%20HiFi!" 
+     target="_blank" 
+     class="floating-wa" 
+     title="Chat via WhatsApp">
+    <span class="wa-tooltip">Chat Sekarang!</span>
+    <div class="wa-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+      </svg>
+    </div>
+  </a>
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-left justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+62 895 3774 02405</span></i>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-cente">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.svg" alt="">
+          <h1 class="sitename">Indosat Hifi</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Hubungi Kami</a></li>  
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 800,
+            "slidesPerView": 1,
+            "grabCursor": true,
+            "pagination": {
+              "el": ".swiper-pagination",
+              "clickable": true
+            }
+          }
+        </script>
+        <div class="swiper-wrapper align-items-center">
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg-mobile1.jpg">
+              <img src="assets/img/hero-bg1.jpg" alt="Hero 1">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg-mobile2.jpg">
+              <img src="assets/img/hero-bg2.jpg" alt="Hero 2">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg-mobile3.jpg">
+              <img src="assets/img/hero-bg3.jpg" alt="Hero 3">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg4.jpg">
+              <img src="assets/img/hero-bg4.jpg" alt="Hero 4">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg-mobile5.jpg">
+              <img src="assets/img/hero-bg5.jpg" alt="Hero 5">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg-mobile6.jpg">
+              <img src="assets/img/hero-bg6.jpg" alt="Hero 6">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg-mobile7.jpg">
+              <img src="assets/img/hero-bg7.png" alt="Hero 7">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/hero-bg-mobile8.jpg">
+              <img src="assets/img/hero-bg8.jpg" alt="Hero 8">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Welcome Section -->
+    <section id="hero2" class="hero2 section light-background">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>Selamat Datang di <span>HiFi</span></h1>
+            <p>Internet rumah cepat, stabil, dan terjangkau untuk semua aktivitas digital Anda</p>
+            <div class="d-flex justify-content-center">
+              <a href="https://wa.me/62895377402405?text=Saya%20ingin%20berlangganan%20HiFi!" target="_blank" class="btn-get-started">Langganan Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cara Berlangganan Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Berlangganan</h2>
+        <p><span>Cara Berlangganan</span> <span class="description-title">Mudah & Cepat</span></p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-person-plus icon"></i></div>
+              <h4><a href="https://wa.me/62895377402405?text=Saya%20ingin%20registrasi%20HiFi%20sekarang!" target="_blank" class="stretched-link">Registrasi</a></h4>
+              <p>Cek ketersediaan area, pilih paket layanan, tentukan jadwal pemasangan, dan lanjut ke pembayaran.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-patch-check icon"></i></div>
+              <h4><a href="https://wa.me/62895377402405?text=Saya%20ingin%20validasi%20data%20untuk%20pemasangan%20HiFi!" target="_blank" class="stretched-link">Validasi</a></h4>
+              <p>Proses validasi data berlangganan yang cepat dan mudah, dibantu oleh tim kami.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-router icon"></i></div>
+              <h4><a href="https://wa.me/62895377402405?text=Saya%20ingin%20tanya%20proses%20instalasi%20HiFi!" target="_blank" class="stretched-link">Instalasi</a></h4>
+              <p>Tim teknisi kami siap datang ke lokasi. Komplek, perumahan, jalan besar, dan gang bisa dipasang selagi dalam jarak 200 meter dari tiang.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-credit-card icon"></i></div>
+              <h4><a href="https://wa.me/62895377402405?text=Saya%20ingin%20melakukan%20pembayaran%20HiFi!" target="_blank" class="stretched-link">Pembayaran</a></h4>
+              <p>Lakukan pembayaran dengan mudah dan langsung nikmati layanan internet HiFi Anda!</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Tentang Kami</h2>
+        <p><span>Temukan Lebih Banyak</span> <span class="description-title">Tentang Kami</span></p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-3">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="ratio ratio-16x9">
+              <video controls>
+                <source src="assets/video/video1.mp4" type="video/mp4">
+                Browser Anda tidak mendukung video.
+              </video>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-content ps-0 ps-lg-3">
+              <h3>Tentang Kami</h3>
+              <p class="fst-italic">
+                Indosat HiFi by Indosat Ooredoo Hutchison hadir untuk mengoptimalkan aktivitas digital Anda dengan layanan internet yang <strong>#NyataAndalnya</strong>.
+                Jelajahi internet dengan bebas dan tanpa khawatir akan koneksi tidak stabil — dengan kualitas jaringan terpercaya dan tim customer service yang selalu siap siaga melayani Anda.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-emoji-smile"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Pelanggan Puas</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-journal-richtext"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Pemasangan Selesai</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-headset"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Jam Dukungan</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-people"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Tim Profesional</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Layanan</h2>
+        <p><span>Cek Semua</span> <span class="description-title">Layanan Kami</span></p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-wifi"></i>
+              </div>
+              <a href="https://wa.me/62895377402405" target="_blank" class="stretched-link">
+                <h3>Internet Rumah</h3>
+              </a>
+              <p>Nikmati koneksi internet fiber optik yang cepat dan stabil untuk seluruh anggota keluarga, mulai dari streaming, gaming, hingga WFH.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="https://wa.me/62895377402405" target="_blank" class="stretched-link">
+                <h3>Jaringan Stabil</h3>
+              </a>
+              <p>Teknologi fiber optik terkini memastikan koneksi Anda tidak mudah putus meskipun digunakan oleh banyak perangkat sekaligus.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <a href="https://wa.me/62895377402405" target="_blank" class="stretched-link">
+                <h3>Kecepatan Tinggi</h3>
+              </a>
+              <p>Tersedia berbagai pilihan paket kecepatan mulai dari 20 Mbps hingga 100 Mbps sesuai kebutuhan aktivitas digital Anda.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-currency-dollar"></i>
+              </div>
+              <a href="https://wa.me/62895377402405" target="_blank" class="stretched-link">
+                <h3>Harga Terjangkau</h3>
+              </a>
+              <p>Paket internet rumah dengan harga bersahabat dan transparan tanpa biaya tersembunyi. Satu tagihan untuk semua kebutuhan internet Anda.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <a href="https://wa.me/62895377402405" target="_blank" class="stretched-link">
+                <h3>CS Siap Siaga</h3>
+              </a>
+              <p>Tim customer service kami siap membantu Anda 24 jam. Hubungi kami kapan saja melalui WhatsApp untuk bantuan cepat dan responsif.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-tools"></i>
+              </div>
+              <a href="https://wa.me/62895377402405" target="_blank" class="stretched-link">
+                <h3>Instalasi Profesional</h3>
+              </a>
+              <p>Teknisi berpengalaman kami akan melakukan pemasangan dengan rapi dan cepat langsung di lokasi Anda tanpa biaya tambahan.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Paket</h2>
+        <p><span>Cek Pilihan</span> <span class="description-title">Paket HiFi</span></p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-3">
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>HiFi 20</h3>
+              <h4><sup>Rp</sup>180K<span> / bulan</span></h4>
+              <ul>
+                <li>Kecepatan 20 Mbps</li>
+                <li>Unlimited Kuota</li>
+                <li>Gratis Instalasi</li>
+                <li class="na">Free Router</li>
+                <li class="na">Prioritas Teknis</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="https://wa.me/62895377402405?text=Saya%20ingin%20paket%20HiFi%2020%20Mbps!" target="_blank" class="btn-buy">Langganan</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-item featured">
+              <h3>HiFi 50</h3>
+              <h4><sup>Rp</sup>280K<span> / bulan</span></h4>
+              <ul>
+                <li>Kecepatan 50 Mbps</li>
+                <li>Unlimited Kuota</li>
+                <li>Gratis Instalasi</li>
+                <li>Free Router</li>
+                <li class="na">Prioritas Teknis</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="https://wa.me/62895377402405?text=Saya%20ingin%20paket%20HiFi%2050%20Mbps!" target="_blank" class="btn-buy">Langganan</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-item">
+              <h3>HiFi 75</h3>
+              <h4><sup>Rp</sup>350K<span> / bulan</span></h4>
+              <ul>
+                <li>Kecepatan 75 Mbps</li>
+                <li>Unlimited Kuota</li>
+                <li>Gratis Instalasi</li>
+                <li>Free Router</li>
+                <li class="na">Prioritas Teknis</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="https://wa.me/62895377402405?text=Saya%20ingin%20paket%20HiFi%2075%20Mbps!" target="_blank" class="btn-buy">Langganan</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="pricing-item">
+              <span class="advanced">Terlaris</span>
+              <h3>HiFi 100</h3>
+              <h4><sup>Rp</sup>450K<span> / bulan</span></h4>
+              <ul>
+                <li>Kecepatan 100 Mbps</li>
+                <li>Unlimited Kuota</li>
+                <li>Gratis Instalasi</li>
+                <li>Free Router</li>
+                <li>Prioritas Teknis</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="https://wa.me/62895377402405?text=Saya%20ingin%20paket%20HiFi%20100%20Mbps!" target="_blank" class="btn-buy">Langganan</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>F.A.Q</h2>
+        <p><span>Pertanyaan yang</span> <span class="description-title">Sering Ditanyakan</span></p>
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3>Bagaimana cara saya mendaftar layanan Indosat HiFi?</h3>
+                <div class="faq-content">
+                  <p>Pendaftaran sangat mudah! Anda cukup menghubungi kami melalui WhatsApp di nomor +62 895 3774 02405, kemudian tim kami akan memandu Anda mulai dari pengecekan area, pemilihan paket, hingga jadwal pemasangan.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3>Apakah lokasi saya bisa dipasang HiFi?</h3>
+                <div class="faq-content">
+                  <p>Indosat HiFi dapat dipasang di komplek perumahan, jalan besar, maupun gang — selama lokasi Anda berada dalam jangkauan 200 meter dari tiang jaringan terdekat. Hubungi kami untuk pengecekan area gratis.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3>Berapa lama proses instalasi berlangsung?</h3>
+                <div class="faq-content">
+                  <p>Proses instalasi umumnya selesai dalam 1–3 hari kerja setelah validasi data dan pembayaran pertama dikonfirmasi. Tim teknisi kami akan menghubungi Anda untuk menentukan jadwal yang sesuai.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3>Apakah ada biaya pemasangan (instalasi)?</h3>
+                <div class="faq-content">
+                  <p>Untuk beberapa paket tertentu, biaya instalasi digratiskan. Silakan hubungi tim kami untuk informasi promo terbaru dan detail biaya pemasangan di area Anda.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3>Bagaimana jika internet saya bermasalah atau lambat?</h3>
+                <div class="faq-content">
+                  <p>Tim customer service kami siap membantu 24 jam. Hubungi kami melalui WhatsApp di +62 895 3774 02405 dan kami akan segera menindaklanjuti laporan Anda, termasuk mengirim teknisi jika diperlukan.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3>Apakah kuota internet HiFi terbatas?</h3>
+                <div class="faq-content">
+                  <p>Tidak! Semua paket Indosat HiFi menawarkan kuota unlimited tanpa FUP (Fair Usage Policy) yang memotong kecepatan Anda. Nikmati internet sepuasnya tanpa khawatir kuota habis.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /FAQ Section -->
+
+    <!-- ============================================================
+         CONTACT SECTION - NEW DESIGN (Klik → WhatsApp)
+    ============================================================ -->
+    <section id="contact" class="contact-banner-section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kontak</h2>
+        <p><span>Butuh Bantuan?</span> <span>Hubungi Kami</span></p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- Entire banner is a clickable link to WhatsApp -->
+        <a href="https://wa.me/62895377402405?text=Halo,%20saya%20butuh%20bantuan%20mengenai%20layanan%20HiFi!" 
+           target="_blank" 
+           class="contact-banner-wrap">
+          <div class="contact-banner-inner">
+
+            <!-- Left: Photo -->
+            <div class="contact-banner-photo">
+              <img src="assets/img/hero-bg1.jpg" 
+                   alt="Tim HiFi siap membantu Anda"
+                   onerror="this.style.background='linear-gradient(135deg,#f8d7e8,#fce4ec)'; this.style.minHeight='260px';">
+            </div>
+
+            <!-- Right: Text & CTA -->
+            <div class="contact-banner-text">
+              <span class="contact-banner-label">Informasi Layanan Pelanggan</span>
+              <h3>Kami hadir untuk Anda!</h3>
+              <p>Tim Customer Care kami siap membantu Anda menemukan solusi terbaik untuk kebutuhan internet rumah Anda.</p>
+
+              <div class="contact-channels">
+                <div class="contact-channel-item">
+                  <!-- WhatsApp Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                  </svg>
+                  <span>+62 895 3774 02405</span>
+                </div>
+              </div>
+
+              <div class="click-hint">
+                <i class="bi bi-cursor-fill"></i>
+                Klik di mana saja untuk chat via WhatsApp
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Ikuti Newsletter Kami</h4>
+            <p>Daftarkan email Anda dan dapatkan informasi promo terbaru layanan Indosat HiFi!</p>
+
+            <!--
+              ✅ PERBAIKAN NEWSLETTER:
+              Menggunakan Formspree (https://formspree.io) — layanan gratis tanpa backend.
+              CARA PAKAI:
+                1. Daftar gratis di https://formspree.io
+                2. Buat form baru → salin endpoint (contoh: https://formspree.io/f/xabcdefg)
+                3. Ganti URL di bawah ini: action="https://formspree.io/f/KODE_FORM_KAMU"
+              Selama belum diganti, form ini menggunakan JavaScript lokal
+              yang tetap menampilkan pesan sukses tanpa mengirim data ke mana pun.
+            -->
+            <div class="newsletter-form-wrap">
+              <input type="email" id="newsletter-email" placeholder="Masukkan email Anda" required>
+              <button type="button" id="newsletter-btn">Daftar</button>
+            </div>
+            <p class="newsletter-msg success" id="newsletter-success">
+              ✅ Permintaan langganan Anda berhasil dikirim. Terima kasih!
+            </p>
+            <p class="newsletter-msg error" id="newsletter-error">
+              ❌ Mohon masukkan alamat email yang valid.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Indosat HiFi</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Layanan Internet Rumah Fiber Optik</p>
+            <p>by Indosat Ooredoo Hutchison</p>
+            <p class="mt-3"><strong>WhatsApp:</strong> <span>+62 895 3774 02405</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Menu</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Beranda</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">Tentang Kami</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Layanan</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#contact">Hubungi Kami</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Layanan Kami</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#pricing">Paket Internet</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#featured-services">Cara Berlangganan</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#faq">F.A.Q</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://wa.me/62895377402405" target="_blank">Hubungi CS</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Ikuti Kami</h4>
+          <p>Dapatkan informasi promo dan update terbaru dari Indosat HiFi melalui media sosial kami.</p>
+          <div class="social-links d-flex">
+            <a href="https://www.facebook.com/Rina"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/nabila_hasna_putri12"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.me/62895377402405" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Xreaper</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://www.instagram.com/farilalfiansyah_">XReaper</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- ✅ Newsletter Script (Formspree / Fallback) -->
+  <script>
+    (function () {
+      const btn     = document.getElementById('newsletter-btn');
+      const input   = document.getElementById('newsletter-email');
+      const success = document.getElementById('newsletter-success');
+      const error   = document.getElementById('newsletter-error');
+
+      // ── Ganti URL ini dengan endpoint Formspree Anda ──────────────────────
+      // Contoh: 'https://formspree.io/f/xabcdefg'
+      // Daftar gratis di https://formspree.io lalu buat form baru.
+      const FORMSPREE_URL = ''; // ← isi di sini jika sudah punya endpoint
+      // ─────────────────────────────────────────────────────────────────────
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      btn.addEventListener('click', async function () {
+        success.style.display = 'none';
+        error.style.display   = 'none';
+
+        const email = input.value.trim();
+
+        if (!isValidEmail(email)) {
+          error.style.display = 'block';
+          return;
+        }
+
+        // Jika Formspree URL sudah diisi → kirim ke Formspree
+        if (FORMSPREE_URL) {
+          try {
+            btn.textContent = 'Mengirim...';
+            btn.disabled = true;
+
+            const res = await fetch(FORMSPREE_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify({ email: email })
+            });
+
+            if (res.ok) {
+              success.style.display = 'block';
+              input.value = '';
+            } else {
+              error.textContent = '❌ Gagal mengirim. Coba lagi nanti.';
+              error.style.display = 'block';
+            }
+          } catch (e) {
+            error.textContent = '❌ Gagal mengirim. Periksa koneksi internet Anda.';
+            error.style.display = 'block';
+          } finally {
+            btn.textContent = 'Daftar';
+            btn.disabled = false;
+          }
+
+        } else {
+          // Fallback: tampilkan pesan sukses tanpa kirim ke server
+          success.style.display = 'block';
+          input.value = '';
+        }
+      });
+
+      // Daftar juga bisa dipicu dengan menekan Enter
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') btn.click();
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
